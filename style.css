@@ -1,17 +1,29 @@
+.main-heading {
+  text-align: center;
+}
 .accordion-element {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
 }
 .accordion-title-container {
+  height: 2em;
   display: flex;
   justify-content: space-between;
   background-color: rgb(219, 214, 214);
   padding: 1em 1em 0.5em;
-}
-
-.accordion-title-container {
-  height: 2em;
   border-radius: 0.5em;
   box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color ease 0.3s;
+}
+
+.accordion-title-container:hover {
+  background-color: rgb(151, 148, 148);
+  color: #fff;
+}
+
+.accordion-title {
+  width: 100%;
 }
 
 .accordion-content-container {
@@ -28,7 +40,7 @@
   height: fit-content;
   color: #fff;
   margin-top: 0;
-  padding: 1em 1em 1em;
+  padding: 1em 2em 1em;
 }
 
 .accordion-toggle {

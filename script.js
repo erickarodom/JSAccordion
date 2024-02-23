@@ -1,8 +1,14 @@
-const toggle = document.querySelector('#accordion-toggle');
-const content = document.querySelector('#accordionContainer');
+const open = document.querySelectorAll('.accordion-title');
+const close = document.querySelectorAll('#accordion-toggle');
+const content = document.querySelectorAll('#accordionContainer');
 
-function toggleContent(){
-        content.classList.toggle('toggle-on');
+function openContent(){
+        
+        content.classList.add('toggle-on');
+}
+function closeContent(){
+        content.classList.remove('toggle-on');
 }
 
-toggle.addEventListener('click', toggleContent);
+open.addEventListener('click', openContent);
+close.addEventListener('click', closeContent);
