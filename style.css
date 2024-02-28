@@ -1,3 +1,8 @@
+.main-content {
+  margin: 0 auto;
+  max-width: 900px;
+}
+
 .main-heading {
   text-align: center;
 }
@@ -18,7 +23,7 @@
 }
 
 .accordion-title-container:hover {
-  border: solid 2px black;
+  border: solid 1px black;
 }
 
 .accordion-title {
