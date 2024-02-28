@@ -6,6 +6,11 @@
 .main-heading {
   text-align: center;
 }
+.input-container {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 2em;
+}
 .accordion-element {
   margin-bottom: 5px;
 }
