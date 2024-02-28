@@ -1,6 +1,6 @@
-const open = document.querySelectorAll('.accordion-title');
-const close = document.querySelectorAll('#accordion-toggle');
-const content = document.querySelectorAll('#accordionContainer');
+const open = document.querySelector('.accordion-title');
+const close = document.querySelector('#accordion-toggle');
+const content = document.querySelector('#accordionContainer');
 console.log(close);
 
 // function openContent(){
