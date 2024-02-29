@@ -41,7 +41,7 @@
     rgb(164, 168, 168) 0%,
     rgb(129, 131, 131) 100%
   );
-  border: none;
+  border: solid 0.5px rgba(77, 76, 76, 0.452);
   border-radius: 1000px;
   box-shadow: 12px 12px 24px rgba(194, 196, 195, 0.664);
   transition: all 0.3s ease-in-out 0s;
@@ -70,6 +70,7 @@ button::before {
 .button:focus {
   color: #f6f6f8;
   transform: translateY(-6px);
+  border: none;
 }
 
 button:hover::before,
@@ -88,7 +89,7 @@ button::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  animation: ring 2s infinite;
+  animation: ring 2s 3;
 }
 
 button:hover::after,
@@ -101,7 +102,7 @@ button:focus::after {
   0% {
     width: 30px;
     height: 30px;
-    opacity: 0.1;
+    opacity: 0.5;
   }
   100% {
     width: 150px;
@@ -136,7 +137,9 @@ hr:after {
   height: 2em;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(219, 214, 214);
+  background-color: rgb(17, 17, 17);
+  color: #fff;
+  text-transform: capitalize;
   padding: 1em 1em 0.5em;
   border-radius: 0.5em;
   box-shadow: -1px 1px 2px 0px rgba(0, 0, 0, 0.75);
@@ -146,7 +149,7 @@ hr:after {
 }
 
 .accordion-title-container:hover {
-  border: solid 1px black;
+  border: solid 2px rgb(255, 255, 255);
 }
 
 .accordion-title {
