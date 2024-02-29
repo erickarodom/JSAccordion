@@ -38,10 +38,15 @@ const newAccordianElement = function createAccordianElement(){
     return newTitleContainer;
 }
 
-console.log(newAccordianElement());
+function attachNewElement(){
+    let newElement = newAccordianElement();
+    accordionContainer.appendChild(newElement);
+}
 
 
-// submit.addEventListener('click', newAccordianElement);
+
+
+submit.addEventListener('click', attachNewElement);
 
 
 // submit.addEventListener('click', function(){
