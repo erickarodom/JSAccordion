@@ -20,9 +20,14 @@ for(let i = 0; i < toggle.length; i++){
 }
 
 
+function createTitleContainer(){
+    const newTitleContainer = document.createElement('div');
+    newTitleContainer.classList.add('accordion-title-container');
+    console.log(newTitleContainer);
+}
 
 
-// submit.addEventListener('click', function(){
-//     let newTitle = titleInput.value;
-//     console.log(newTitle);
-// });
+submit.addEventListener('click', function(){
+    let newTitle = titleInput.value;
+    console.log(newTitle);
+});
