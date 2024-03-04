@@ -1,5 +1,5 @@
-const titleInput = document.getElementById('newAccordionTitle');
-const contentInput = document.getElementById('newAccordionContent');
+let titleInput = document.getElementById('newAccordionTitle');
+let contentInput = document.getElementById('newAccordionContent');
 const submit = document.getElementById('submitButton');
 let title = document.querySelectorAll('.accordion-title');
 
@@ -18,7 +18,7 @@ const newAccordianElement = function createAccordianElement(){
 
     //build new element
     newTitleContainer.appendChild(newTitle);
-    newTitle.innerText = "This Is The Accordion Title Or Faq Question.";
+    newTitle.innerText = titleInput.value;
     newTitleContainer.appendChild(newToggle);
     newToggle.innerText = "X";
 
@@ -29,11 +29,13 @@ function attachNewElement(){
     const accordionContainer = document.getElementById('accordianModuleContainer');
     const newContentContainer = document.createElement('div');
     newContentContainer.classList.add('accordion-content-container');
-    newContentContainer.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa reiciendis et!Lorem ipsum dolor sit amet consectetur adipisicing elit";
+    newContentContainer.innerText = contentInput.value;
     const newElement = newAccordianElement();
     accordionContainer.appendChild(newElement);
     accordionContainer.appendChild(newContentContainer);
 }
+
+
 
 function toggleElement() {
     let title = document.querySelectorAll('.accordion-title');
@@ -52,7 +54,6 @@ function toggleElement() {
             content.classList.remove('toggle-on');
         });
     }
-    console.log(title);
 }
 
 if(title.length <= 1){
@@ -61,6 +62,7 @@ if(title.length <= 1){
 
 submit.addEventListener('click', attachNewElement);
 submit.addEventListener('click', toggleElement);
+
 
 
 
