@@ -1,9 +1,8 @@
-const accordionContainer = document.getElementById('accordianModuleContainer');
-const title = document.querySelectorAll('.accordion-title');
-const toggle = document.querySelectorAll('.accordion-toggle');
 const titleInput = document.getElementById('newAccordionTitle');
 const contentInput = document.getElementById('newAccordionContent');
 const submit = document.getElementById('submitButton');
+let title = document.querySelectorAll('.accordion-title');
+
 
 
 const newAccordianElement = function createAccordianElement(){
@@ -27,6 +26,7 @@ const newAccordianElement = function createAccordianElement(){
 }
 
 function attachNewElement(){
+    const accordionContainer = document.getElementById('accordianModuleContainer');
     const newContentContainer = document.createElement('div');
     newContentContainer.classList.add('accordion-content-container');
     newContentContainer.innerText = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic ipsa reiciendis et!Lorem ipsum dolor sit amet consectetur adipisicing elit";
@@ -35,20 +35,33 @@ function attachNewElement(){
     accordionContainer.appendChild(newContentContainer);
 }
 
+function toggleElement() {
+    let title = document.querySelectorAll('.accordion-title');
+    let toggle = document.querySelectorAll('.accordion-toggle');
 
+    for(let i = 0; i < title.length; i++){
+        title[i].addEventListener('click', function(e){
+            let content = e.target.parentElement.nextElementSibling;
+            content.classList.add('toggle-on');
+        });
+    }
 
-for(let i = 0; i < title.length; i++){
-    title[i].addEventListener('click', function(e){
-        let content = e.target.parentElement.nextElementSibling;
-        content.classList.add('toggle-on');
-    });
+    for(let i = 0; i < toggle.length; i++){
+        toggle[i].addEventListener('click', function(e){
+            let content = e.target.parentElement.nextElementSibling;
+            content.classList.remove('toggle-on');
+        });
+    }
+    console.log(title);
 }
-for(let i = 0; i < toggle.length; i++){
-    toggle[i].addEventListener('click', function(e){
-        let content = e.target.parentElement.nextElementSibling;
-        content.classList.remove('toggle-on');
-    });
-}
 
+if(title.length <= 1){
+    toggleElement();
+}
 
 submit.addEventListener('click', attachNewElement);
+submit.addEventListener('click', toggleElement);
+
+
+
+
