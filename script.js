@@ -1,11 +1,13 @@
-let titleInput = document.getElementById('newAccordionTitle');
-let contentInput = document.getElementById('newAccordionContent');
 const submit = document.getElementById('submitButton');
 let title = document.querySelectorAll('.accordion-title');
+let titleInput = document.getElementById('newAccordionTitle');
+let contentInput = document.getElementById('newAccordionContent');
 
 
 
 const newAccordianElement = function createAccordianElement(){
+   if(titleInput.value == ""){alert('You must add a title first, thanks.');}else{
+    let titleInput = document.getElementById('newAccordionTitle');
     const newTitleContainer = document.createElement('div');
     const newTitle = document.createElement('div');
     const newToggle = document.createElement('div');
@@ -23,19 +25,22 @@ const newAccordianElement = function createAccordianElement(){
     newToggle.innerText = "X";
 
     return newTitleContainer;
+   }
 }
 
 function attachNewElement(){
+    if(contentInput.value == ""){alert('You must add new content first, thanks.');}else{
+    let contentInput = document.getElementById('newAccordionContent');
     const accordionContainer = document.getElementById('accordianModuleContainer');
     const newContentContainer = document.createElement('div');
     newContentContainer.classList.add('accordion-content-container');
     newContentContainer.innerText = contentInput.value;
     const newElement = newAccordianElement();
+
     accordionContainer.appendChild(newElement);
     accordionContainer.appendChild(newContentContainer);
+    }
 }
-
-
 
 function toggleElement() {
     let title = document.querySelectorAll('.accordion-title');
@@ -56,12 +61,26 @@ function toggleElement() {
     }
 }
 
+function clearInputs(){
+    if(!titleInput.value == "" && contentInput.value == "" ){
+        titleInput.value = titleInput.value;
+    }else if(!contentInput.value == "" && titleInput.value == ""){
+        contentInput.value = contentInput.value;
+    } else{
+    titleInput.value = "";
+    contentInput.value = "";
+    }
+}
+
 if(title.length <= 1){
     toggleElement();
 }
 
+
 submit.addEventListener('click', attachNewElement);
 submit.addEventListener('click', toggleElement);
+submit.addEventListener('click', clearInputs);
+
 
 
 
